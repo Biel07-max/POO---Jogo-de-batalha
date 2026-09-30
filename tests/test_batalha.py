@@ -4,9 +4,13 @@ from contextlib import redirect_stdout
 from unittest.mock import patch
 
 from src.batalha import Batalha
+from src.personagem import Personagem
 from src.guerreiro import Guerreiro
 from src.mago import Mago
+from src.arqueiro import Arqueiro
 from src.inimigo import Inimigo
+from src.orc import Orc
+from src.dragao import Dragao
 from src.pocao import PocaoDeVida
 
 
