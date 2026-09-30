@@ -39,6 +39,12 @@ class Batalha:
                 print("Opção inválida.")
                 continue
 
-            # TODO: inimigo deve atacar depois do jogador
+            # Turno do inimigo (somente se ainda estiver vivo)
+            if self.inimigo.esta_vivo():
+                print()
+                self.inimigo.atacar(self.jogador)
+
+        return self._verificar_vencedor()
+
 
         # TODO: verificar quem venceu
