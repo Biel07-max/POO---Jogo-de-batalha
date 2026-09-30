@@ -27,4 +27,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Executar testes
-        run: PYTHONPATH=. pytest
+  run: cd tests && python -m pytest --import-mode=importlib ../tests
