@@ -3,11 +3,11 @@ import unittest
 from contextlib import redirect_stdout
 from unittest.mock import patch
 
-from batalha import Batalha
-from guerreiro import Guerreiro
-from mago import Mago
-from inimigo import Inimigo
-from pocao import PocaoDeVida
+from src.batalha import Batalha
+from src.guerreiro import Guerreiro
+from src.mago import Mago
+from src.inimigo import Inimigo
+from src.pocao import PocaoDeVida
 
 
 def rodar(batalha, entradas):
