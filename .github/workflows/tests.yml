@@ -27,4 +27,4 @@ jobs:
           pip install -r requirements.txt
 
       - name: Executar testes
-  run: PYTHONPATH=$PYTHONPATH:. pytest
+        run: PYTHONPATH=$PYTHONPATH:. pytest
