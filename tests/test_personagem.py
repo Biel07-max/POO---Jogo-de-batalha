@@ -10,7 +10,7 @@ from arqueiro import Arqueiro
 from inimigo import Inimigo
 from orc import Orc
 from dragao import Dragao
-from item import PocaoDeVida
+from pocao import PocaoDeVida
 
 
 class PersonagemFake(Personagem):

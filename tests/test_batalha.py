@@ -7,7 +7,7 @@ from batalha import Batalha
 from guerreiro import Guerreiro
 from mago import Mago
 from inimigo import Inimigo
-from item import PocaoDeVida
+from pocao import PocaoDeVida
 
 
 def rodar(batalha, entradas):
