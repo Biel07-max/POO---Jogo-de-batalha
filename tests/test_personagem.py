@@ -3,6 +3,10 @@ import unittest
 from contextlib import redirect_stdout
 from unittest.mock import patch
 
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from personagem import Personagem
 from guerreiro import Guerreiro
 from mago import Mago
