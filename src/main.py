@@ -1,6 +1,6 @@
-from guerreiro import Guerreiro
-from inimigo import Inimigo
-from batalha import Batalha
+from .guerreiro import Guerreiro
+from .inimigo import Inimigo
+from .batalha import Batalha
 
 
 def main():
