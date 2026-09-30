@@ -106,7 +106,7 @@ class TestClasses(TestBase):
         self.assertEqual(m.mana, 10)
         self.assertEqual(alvo.vida, 100)
 
-    @patch("arqueiro.random.random", return_value=0.99)
+    @patch("src.arqueiro.random.random", return_value=0.99)
     def test_arqueiro_tiro_normal(self, _):
         a = Arqueiro("Robin")
         alvo = Inimigo("Alvo", 100, 1, 5)
@@ -114,7 +114,7 @@ class TestClasses(TestBase):
         self.assertEqual(alvo.vida, 80)  # 25 - 5
         self.assertEqual(a.flechas, 9)
 
-    @patch("arqueiro.random.random", return_value=0.0)
+    @patch("src.arqueiro.random.random", return_value=0.0)
     def test_arqueiro_critico(self, _):
         a = Arqueiro("Robin")
         alvo = Inimigo("Alvo", 100, 1, 5)
