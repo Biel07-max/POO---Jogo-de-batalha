@@ -3,18 +3,14 @@ import unittest
 from contextlib import redirect_stdout
 from unittest.mock import patch
 
-import sys
-import os
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from personagem import Personagem
-from guerreiro import Guerreiro
-from mago import Mago
-from arqueiro import Arqueiro
-from inimigo import Inimigo
-from orc import Orc
-from dragao import Dragao
-from item import PocaoDeVida
+from src.personagem import Personagem
+from src.guerreiro import Guerreiro
+from src.mago import Mago
+from src.arqueiro import Arqueiro
+from src.inimigo import Inimigo
+from src.orc import Orc
+from src.dragao import Dragao
+from src.pocao import PocaoDeVida
 
 
 class PersonagemFake(Personagem):
@@ -110,7 +106,7 @@ class TestClasses(TestBase):
         self.assertEqual(m.mana, 10)
         self.assertEqual(alvo.vida, 100)
 
-    @patch("arqueiro.random.random", return_value=0.99)
+    @patch("src.arqueiro.random.random", return_value=0.99)
     def test_arqueiro_tiro_normal(self, _):
         a = Arqueiro("Robin")
         alvo = Inimigo("Alvo", 100, 1, 5)
@@ -118,7 +114,7 @@ class TestClasses(TestBase):
         self.assertEqual(alvo.vida, 80)  # 25 - 5
         self.assertEqual(a.flechas, 9)
 
-    @patch("arqueiro.random.random", return_value=0.0)
+    @patch("src.arqueiro.random.random", return_value=0.0)
     def test_arqueiro_critico(self, _):
         a = Arqueiro("Robin")
         alvo = Inimigo("Alvo", 100, 1, 5)
