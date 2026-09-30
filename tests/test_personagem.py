@@ -3,14 +3,14 @@ import unittest
 from contextlib import redirect_stdout
 from unittest.mock import patch
 
-from personagem import Personagem
-from guerreiro import Guerreiro
-from mago import Mago
-from arqueiro import Arqueiro
-from inimigo import Inimigo
-from orc import Orc
-from dragao import Dragao
-from pocao import PocaoDeVida
+from src.personagem import Personagem
+from src.guerreiro import Guerreiro
+from src.mago import Mago
+from src.arqueiro import Arqueiro
+from src.inimigo import Inimigo
+from src.orc import Orc
+from src.dragao import Dragao
+from src.pocao import PocaoDeVida
 
 
 class PersonagemFake(Personagem):
