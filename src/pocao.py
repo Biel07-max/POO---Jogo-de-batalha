@@ -1,4 +1,4 @@
-from src.item import Item
+from .item import Item
 
 
 class PocaoDeVida(Item):

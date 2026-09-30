@@ -1,4 +1,4 @@
-from inimigo import Inimigo
+from .inimigo import Inimigo
 
 
 class Dragao(Inimigo):
