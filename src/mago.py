@@ -1,6 +1,9 @@
 from personagem import Personagem
 
+
 class Mago(Personagem):
+
+    CUSTO_MAGIA = 20
 
     def __init__(self, nome):
         super().__init__(
@@ -13,14 +16,19 @@ class Mago(Personagem):
         self.mana = 100
 
     def atacar(self, alvo):
-        # TODO: implementar ataque normal
-        pass
+        # Ataque normal: pancada de cajado, metade do poder mágico
+        print(f"{self.nome} acerta {alvo.nome} com o cajado!")
+        return alvo.receber_dano(self.ataque // 2)
 
     def usar_magia(self, alvo):
-        # TODO: implementar magia
-
-        if self.mana <= 0:
+        if self.mana < self.CUSTO_MAGIA:
             print("O mago não possui mana suficiente.")
-            return
+            return 0
 
-        pass
+        self.mana -= self.CUSTO_MAGIA
+        print(
+            f"{self.nome} lança uma bola de fogo em {alvo.nome}! "
+            f"(Mana restante: {self.mana})"
+        )
+        # A magia dá 50% a mais de dano que o ataque base
+        return alvo.receber_dano(int(self.ataque * 1.5))
