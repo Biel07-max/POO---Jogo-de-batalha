@@ -5,8 +5,6 @@ class Batalha:
         self.inimigo = inimigo
 
     def iniciar(self):
-        """Executa a batalha e retorna 'vitoria', 'derrota' ou 'fuga'."""
-
         print("=" * 40)
         print("        INÍCIO DA BATALHA")
         print("=" * 40)
@@ -14,7 +12,6 @@ class Batalha:
         tem_magia = hasattr(self.jogador, "usar_magia")
 
         while self.jogador.esta_vivo() and self.inimigo.esta_vivo():
-
             print("\n--- STATUS ---")
             self.jogador.mostrar_status()
             self.inimigo.mostrar_status()
@@ -33,7 +30,7 @@ class Batalha:
 
             elif opcao == "2":
                 if not self._usar_item():
-                    continue  # ação cancelada/inválida não gasta o turno
+                    continue
 
             elif opcao == "3":
                 print("Você fugiu da batalha!")
@@ -41,7 +38,7 @@ class Batalha:
 
             elif opcao == "4" and tem_magia:
                 if self.jogador.mana < self.jogador.CUSTO_MAGIA:
-                    self.jogador.usar_magia(self.inimigo)  # só avisa
+                    print("O mago não possui mana suficiente.")
                     continue
                 self.jogador.usar_magia(self.inimigo)
 
@@ -49,15 +46,15 @@ class Batalha:
                 print("Opção inválida.")
                 continue
 
-            # Turno do inimigo (somente se ainda estiver vivo)
-            if self.inimigo.esta_vivo():
-                print()
+            if not self.inimigo.esta_vivo():
+                break
+
+            if self.jogador.esta_vivo():
                 self.inimigo.atacar(self.jogador)
 
         return self._verificar_vencedor()
 
     def _usar_item(self):
-        """Mostra o inventário e usa o item escolhido. Retorna True se gastou o turno."""
         inventario = self.jogador.inventario
 
         if not inventario:
@@ -70,6 +67,10 @@ class Batalha:
         print("0 - Voltar")
 
         escolha = input("Escolha um item: ").strip()
+
+        if escolha == "0":
+            print("Voltando...")
+            return False
 
         if not escolha.isdigit() or not (1 <= int(escolha) <= len(inventario)):
             print("Item cancelado ou inválido.")
