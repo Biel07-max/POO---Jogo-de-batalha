@@ -44,4 +44,5 @@ class Batalha:
         return self._verificar_vencedor()
 
 
+
         # TODO: verificar quem venceu
