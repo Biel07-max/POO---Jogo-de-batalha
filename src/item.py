@@ -5,5 +5,4 @@ class Item:
         self.valor = valor
 
     def usar(self, personagem):
-        # TODO: implementar efeito do item
-        pass
+        raise NotImplementedError("Cada item deve implementar seu próprio efeito.")

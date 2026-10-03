@@ -41,4 +41,7 @@ class Batalha:
 
             # TODO: inimigo deve atacar depois do jogador
 
+        return self._verificar_vencedor()
+
+
         # TODO: verificar quem venceu
